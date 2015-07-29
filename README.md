@@ -1,2 +1,2 @@
 # resume
-My resume. 我的简历
+My resume
