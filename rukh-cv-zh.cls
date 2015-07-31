@@ -28,8 +28,8 @@
 \usepackage{fontspec} % Required for specifying custom fonts in XeLaTeX
 \usepackage[noindent]{ctex}
 
-\setmainfont[Path=fonts/lato/]{Lato-Reg} % The primary font for content text; defines bold, italic and bold-italic as well
-\setCJKmainfont[Path=fonts/fangzheng/, BoldFont=lanting-zhunhei]{lanting-hei}
+\setmainfont[Path=fonts/lato/]{Lato-Lig} % The primary font for content text; defines bold, italic and bold-italic as well
+\setCJKmainfont[Path=fonts/fangzheng/, BoldFont=lanting-hei]{lanting-xianhei}
 
 \newfontfamily\primaryfontcn[Path=fonts/fangzheng/]{lanting-zhunhei}
 \newfontfamily\headingfontcn[Path=fonts/fangzheng/]{lanting-zhunhei}
@@ -37,11 +37,11 @@
 \newfontfamily\descriptfontcn[Path=fonts/fangzheng/]{lanting-xianhei}
 \newfontfamily\locationfontcn[Path=fonts/fangzheng/]{lanting-xianhei}
 
-\newfontfamily\primaryfont[Path=fonts/lato/]{Lato-Reg}
+\newfontfamily\primaryfont[Path=fonts/lato/]{Lato-Lig}
 \newfontfamily\headingfont[Path=fonts/lato/]{Lato-Bol}
 \newfontfamily\subheadingfont[Path=fonts/lato/]{Lato-Bol}
-\newfontfamily\descriptfont[Path=fonts/lato/]{Lato-Reg}
-\newfontfamily\locationfont[Path=fonts/lato/]{Lato-Reg}
+\newfontfamily\descriptfont[Path=fonts/lato/]{Lato-Lig}
+\newfontfamily\locationfont[Path=fonts/lato/]{Lato-Lig}
 
 %----------------------------------------------------------------------------------------
 %	NAME FIELD
@@ -88,6 +88,11 @@
 %	SECTION TITLE STYLING AND SPACING
 %----------------------------------------------------------------------------------------
 
+\usepackage{enumitem}
+\setitemize[0]{leftmargin=60pt, itemindent=0pt}
+
 \newenvironment{tightitemize} % Defines the tightitemize environment which modifies the itemize environment to be more compact
-{\vspace{-5pt minus \topsep}\begin{itemize}\primaryfont\itemsep1pt \parskip0pt \parsep0pt}
+{\vspace{-5pt minus \topsep}\begin{itemize} \itemsep1pt \parskip0pt \parsep0pt \primaryfont}
 {\end{itemize}\vspace{-\topsep}}
+
+% \itemindent.4in
