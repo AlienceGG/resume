@@ -51,8 +51,8 @@
 \newcommand{\infosection}[2]{
 \begin{flushright}
 \fontsize{10pt}{12pt}
-\primaryfont\ #1 \\ \bigskip
-\primaryfont\ #2
+\headingfont\ #1 \\ \bigskip
+\headingfont\ #2
 \end{flushright}
 }
 
