@@ -17,9 +17,10 @@
 
 \usepackage[usenames,dvipsnames]{xcolor} % Required for custom colors
 
-\definecolor{primary}{HTML}{2b2b2b} % The primary document color for content text
-\definecolor{headings}{HTML}{555555} % The color of the large sections
-\definecolor{subheadings}{HTML}{333333} % The color of subsections and places worked/studied
+\definecolor{date}{HTML}{666666}
+\definecolor{primary}{HTML}{2b2b2b}
+\definecolor{headings}{HTML}{6A6A6A}
+\definecolor{subheadings}{HTML}{333333}
 
 %----------------------------------------------------------------------------------------
 %	FONTS
@@ -27,9 +28,9 @@
 
 \usepackage{fontspec} % Required for specifying custom fonts in XeLaTeX
 
-\setmainfont[Color=primary, Path=fonts/heros/, BoldItalicFont=texgyreheros-bolditalic, BoldFont=texgyreheros-bold, ItalicFont=texgyreheros-italic]{texgyreheros-regular} % The primary font for content text; defines bold, italic and bold-italic as well
-\newfontfamily\primaryfont[Color=primary, Path=fonts/heros/, BoldItalicFont=texgyreheros-bolditalic, BoldFont=texgyreheros-bold, ItalicFont=texgyreheros-italic]{texgyreheros-regular}
-\newfontfamily\headingfont[Color=headings, Path=fonts/lato/]{Lato-Bol}
+\setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig}
+\newfontfamily\primaryfont[Color=primary, Path=fonts/lato/]{Lato-Reg}
+\newfontfamily\headingfont[Color=headings, Path=fonts/lato/]{Lato-Lig}
 \newfontfamily\subheadingfont[Path=fonts/lato/]{Lato-Bol}
 \newfontfamily\descriptfont[Path=fonts/lato/]{Lato-Reg}
 \newfontfamily\locationfont[Path=fonts/lato/]{Lato-Reg}
@@ -41,14 +42,15 @@
 \newcommand{\namesection}[2]{ % Defines the command for the main heading
 \begin{flushright}
 \vspace{5pt}
-\fontsize{20pt}{24pt} % Font size
-\headingfont #1 % First name font
-\headingfont #2 % Last name font
+\fontsize{20pt}{24pt}
+\headingfont #1
+\descriptfont #2
 \end{flushright}
 }
 
 \newcommand{\infosection}[2]{
 \begin{flushright}
+\fontsize{10pt}{12pt}
 \primaryfont\ #1 \\ \bigskip
 \primaryfont\ #2
 \end{flushright}
@@ -64,13 +66,13 @@
 \newcommand{\sectionspace}{\vspace{8pt}} % Defines a command to add a set amount of space after sections and subsections
 
 \titleformat{\section}{ % Customize the large section titles
-\color{headings}\fontsize{16pt}{24pt}\headingfont}{}{0em}{}
+\color{headings}\fontsize{16pt}{24pt}\headingfont\uppercase}{}{0em}{}
 
 \newcommand{\runsubsection}[1]{ % Used for creating subsections where a description is required on the same line
-\color{subheadings}\fontsize{12pt}{12pt}\subheadingfont\bfseries{#1}\normalfont}
+\color{subheadings}\fontsize{12pt}{12pt}\subheadingfont\bfseries\uppercase{#1}\normalfont}
 
 \newcommand{\descript}[1]{ % Used for describing the subsection either on the same line or underneath
-\color{subheadings}\fontsize{11pt}{13pt}\descriptfont{#1 \\[1pt]}\normalfont}
+\color{subheadings}\fontsize{11pt}{13pt}\descriptfont{| #1 \\[1pt]}\normalfont}
 
 \newcommand{\location}[1]{ % Used for specifying a duration and/or location under a subsection
 \color{headings}\fontsize{10pt}{12pt}\locationfont{#1}\normalfont}
